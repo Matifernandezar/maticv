@@ -219,69 +219,77 @@
           <article class="project-card project-featured reveal">
             <div class="project-topline"><span>01</span><span>HOTELERÍA · WEB · RESERVAS</span></div>
             <h3>Hostería La Camila</h3>
-            <p>Sitio web del establecimiento donde también gestiono sistemas y reservas. El objetivo fue mejorar su presencia digital y facilitar el acceso a reservas directas.</p>
+            <p class="project-intro">Nuevo sitio del alojamiento, desarrollado desde el conocimiento directo de su operación y sistemas de reservas.</p>
             <div class="case-grid">
-              <div><span>PROBLEMA</span><p>Dependencia de canales externos y necesidad de una presencia digital moderna.</p></div>
-              <div><span>SOLUCIÓN</span><p>Sitio responsive orientado a conversión, información clara y acceso a reservas.</p></div>
-              <div><span>IMPLEMENTACIÓN</span><p>Frontend, integración con reservas, WhatsApp, SEO técnico y despliegue en Vercel.</p></div>
+              <div><span>Problema</span><p>Mejorar presencia digital y facilitar el acceso al canal de reserva directa.</p></div>
+              <div><span>Solución</span><p>Sitio moderno, responsive y orientado a conversión.</p></div>
+              <div><span>Implementación</span><p>Frontend, reservas, WhatsApp, servicios, SEO técnico y despliegue en Vercel.</p></div>
             </div>
-            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span><span>SEO</span><span>Vercel</span></div>
-            <a class="project-link" href="https://hosteria-la-camila-web.vercel.app/es" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a>
+            <div class="project-footer">
+              <ul class="tag-list"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive</li><li>SEO</li><li>Vercel</li></ul>
+              <a class="text-link" href="https://hosteria-la-camila-web.vercel.app/es" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a>
+            </div>
           </article>
 
           <article class="project-card reveal">
             <div class="project-topline"><span>02</span><span>INSTITUCIONAL · CONTENIDOS</span></div>
             <h3>Vamos con Fe</h3>
-            <p>Desarrollo de un sitio institucional para Padre Felipe, orientado a organizar su presencia digital, contenidos, libros y canales online.</p>
-            <div class="project-tags"><span>Web</span><span>Responsive</span><span>SEO</span><span>Contenido</span></div>
-            <a class="project-link" href="https://vamosconfe.com" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a>
+            <p class="project-intro">Sitio institucional y de contenidos desarrollado para Padre Felipe, con foco en presencia digital y acceso a sus publicaciones.</p>
+            <div class="case-grid compact">
+              <div><span>Enfoque</span><p>Arquitectura simple, navegación clara y experiencia responsive.</p></div>
+              <div><span>Implementación</span><p>Contenido institucional, libros, enlaces digitales y optimización SEO.</p></div>
+            </div>
+            <div class="project-footer">
+              <ul class="tag-list"><li>Web</li><li>Responsive</li><li>SEO</li><li>Contenido</li></ul>
+              <a class="text-link" href="https://vamosconfe.com" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
     <section class="education section-shell" id="formacion">
-      <div class="container">
+      <div class="container education-grid">
         <div class="section-heading reveal">
           <p class="eyebrow">FORMACIÓN</p>
-          <h2>Sistemas + Telecomunicaciones.</h2>
+          <h2>Base académica en sistemas y telecomunicaciones.</h2>
         </div>
-        <div class="education-grid">
-          <article class="edu-card reveal">
-            <span class="edu-icon">01</span>
-            <div><h3>Analista de Sistemas</h3><p>Instituto Universitario Aeronáutico</p><span>Formación finalizada</span></div>
+        <div class="education-list reveal">
+          <article>
+            <span class="edu-icon">SYS</span>
+            <div><h3>Analista de Sistemas</h3><p>Instituto Universitario Aeronáutico</p></div>
           </article>
-          <article class="edu-card reveal">
-            <span class="edu-icon">02</span>
-            <div><h3>Técnico Superior en Telecomunicaciones</h3><p>Escuela de Suboficiales de la Fuerza Aérea Argentina</p><span>2019 — 2021</span></div>
+          <article>
+            <span class="edu-icon">TEL</span>
+            <div><h3>Técnico Superior en Telecomunicaciones</h3><p>Escuela de Suboficiales de la Fuerza Aérea Argentina · 2019–2021</p></div>
           </article>
         </div>
       </div>
     </section>
 
     <section class="contact section-shell" id="contacto">
-      <div class="container contact-box reveal">
+      <div class="container contact-card reveal">
         <div>
-          <p class="eyebrow">CONTACTO</p>
-          <h2>¿Buscás un perfil técnico que pueda moverse entre redes, sistemas e infraestructura?</h2>
-          <p>Podés conocer más sobre mi experiencia profesional y contactarme desde LinkedIn.</p>
+          <p class="eyebrow">CONTACTO PROFESIONAL</p>
+          <h2>¿Buscás un perfil de telecomunicaciones, networking o IT?</h2>
+          <p>Mi LinkedIn concentra mi actividad profesional y es el canal de contacto principal por el momento.</p>
         </div>
         <div class="contact-actions">
           <a class="btn btn-primary" href="https://www.linkedin.com/in/mat%C3%ADas-fernandez-555141250/" target="_blank" rel="noopener noreferrer">Contactar por LinkedIn ↗</a>
-          <span class="cv-note">CV descargable · Próximamente actualizado</span>
+          <button class="btn btn-secondary" type="button" data-cv>CV en actualización</button>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <span>Matías Fernández</span>
+    <div class="container footer-wrap">
+      <span>© <span id="year"></span> Matías Fernández</span>
       <span>Telecomunicaciones · Networking · Sistemas · IT</span>
-      <a href="#inicio">Volver arriba ↑</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <div class="toast" role="status" aria-live="polite">El CV está siendo actualizado.</div>
+  <script src="script.js" defer></script>
 </body>
 </html>
