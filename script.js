@@ -2,6 +2,13 @@ const header = document.querySelector('.site-header');
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 const toast = document.querySelector('.toast');
+const portrait = document.querySelector('.portrait-frame img');
+
+if (portrait) {
+  portrait.src = 'assets/matias-fernandez.svg';
+  portrait.width = 480;
+  portrait.height = 607;
+}
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
