@@ -5,9 +5,7 @@ const toast = document.querySelector('.toast');
 const portrait = document.querySelector('.portrait-frame img');
 
 if (portrait) {
-  portrait.src = 'assets/matias-profile.jpg';
-  portrait.width = 160;
-  portrait.height = 200;
+  portrait.src = 'assets/mati.png';
 }
 
 document.getElementById('year').textContent = new Date().getFullYear();
