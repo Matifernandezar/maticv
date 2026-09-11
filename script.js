@@ -4,6 +4,66 @@ const nav = document.querySelector('.nav');
 const toast = document.querySelector('.toast');
 const portrait = document.querySelector('.portrait-frame img');
 
+// Mobile layout hotfix for the fiber section. Prevents horizontal overflow
+// and stacks the technical path cleanly on small screens.
+const mobileFixes = document.createElement('style');
+mobileFixes.textContent = `
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.fiber-grid,
+.fiber-copy,
+.fiber-details,
+.fiber-details > div {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.fiber-copy p,
+.fiber-details span {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .fiber-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fiber-path {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .fiber-path span {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+    text-align: left;
+    padding: 12px 14px;
+  }
+
+  .fiber-path i {
+    display: none;
+  }
+
+  .fiber-details,
+  .fiber-details > div {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+`;
+document.head.appendChild(mobileFixes);
+
 if (portrait) {
   portrait.src = 'assets/mati.png';
 }
