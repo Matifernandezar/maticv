@@ -68,6 +68,86 @@ if (portrait) {
   portrait.src = 'assets/mati.png';
 }
 
+// Amplía la sección de proyectos con trabajos reales recientes.
+const projectsSection = document.querySelector('#proyectos');
+const projectGrid = projectsSection?.querySelector('.project-grid');
+if (projectsSection && projectGrid) {
+  const eyebrow = projectsSection.querySelector('.eyebrow');
+  const heading = projectsSection.querySelector('h2');
+  const intro = projectsSection.querySelector('.section-heading > p:last-child');
+
+  if (eyebrow) eyebrow.textContent = 'PROYECTOS REALES';
+  if (heading) heading.textContent = 'Soluciones publicadas y productos en desarrollo.';
+  if (intro) intro.textContent = 'Sitios, automatizaciones y productos digitales construidos para necesidades concretas, con despliegues públicos cuando corresponde.';
+
+  projectGrid.insertAdjacentHTML('beforeend', `
+    <article class="project-card reveal">
+      <div class="project-topline"><span>03</span><span>ALOJAMIENTO · SEO · WEB</span></div>
+      <h3>Hostel en Córdoba</h3>
+      <p class="project-intro">Sitio orientado a captar búsquedas de alojamiento en Córdoba y llevar tráfico directo al canal de contacto.</p>
+      <div class="case-grid compact">
+        <div><span>Implementación</span><p>Diseño responsive, JavaScript, sitemap, robots.txt, canonicals, Open Graph y datos estructurados de alojamiento.</p></div>
+        <div><span>Objetivo</span><p>Mejorar visibilidad orgánica y conversión hacia consultas directas.</p></div>
+      </div>
+      <div class="project-footer">
+        <ul class="tag-list"><li>Responsive</li><li>JavaScript</li><li>SEO</li><li>Schema</li><li>Vercel</li></ul>
+        <a class="text-link" href="https://www.hostelencordoba.lat/" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-topline"><span>04</span><span>NEGOCIO LOCAL · WEB · SEO</span></div>
+      <h3>Nutrir</h3>
+      <p class="project-intro">Sitio comercial para una marca de yogur griego en Salta, pensado para presentar productos y facilitar consultas por WhatsApp.</p>
+      <div class="case-grid compact">
+        <div><span>Implementación</span><p>HTML, CSS y JavaScript, catálogo responsive, SEO local, sitemap, robots.txt y datos estructurados.</p></div>
+        <div><span>Conversión</span><p>Integración directa con WhatsApp y presentación clara de formatos, características y puntos de venta.</p></div>
+      </div>
+      <div class="project-footer">
+        <ul class="tag-list"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>SEO local</li><li>WhatsApp</li></ul>
+        <a class="text-link" href="https://nutrir-three.vercel.app/" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-topline"><span>05</span><span>AUTOMATIZACIÓN · WEB APP</span></div>
+      <h3>Reels a Drive</h3>
+      <p class="project-intro">Herramienta web para recibir enlaces de Reels y automatizar su descarga, con una arquitectura preparada para integrarse con almacenamiento en Google Drive.</p>
+      <div class="case-grid compact">
+        <div><span>Implementado</span><p>Flujo web de descarga, despliegue en Vercel y pruebas automáticas.</p></div>
+        <div><span>En desarrollo</span><p>Integración completa con Google Drive pendiente de credenciales OAuth para el flujo final.</p></div>
+      </div>
+      <div class="project-footer">
+        <ul class="tag-list"><li>Web App</li><li>Automatización</li><li>Vercel</li><li>Testing</li><li>Google Drive</li></ul>
+        <span class="text-link project-status">Herramienta interna / en desarrollo</span>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-topline"><span>06</span><span>MOBILE · REACT NATIVE · EN DESARROLLO</span></div>
+      <h3>Fuera de Juego</h3>
+      <p class="project-intro">Aplicación móvil de autocontrol frente a apuestas, diseñada para combinar seguimiento personal con herramientas técnicas de bloqueo.</p>
+      <div class="case-grid compact">
+        <div><span>Stack</span><p>React Native + TypeScript, arquitectura multiplataforma y módulos nativos.</p></div>
+        <div><span>Implementado</span><p>Bloqueo Android mediante VPN local/DNS, lógica de dominios y pruebas automatizadas. La publicación móvil continúa en desarrollo.</p></div>
+      </div>
+      <div class="project-footer">
+        <ul class="tag-list"><li>React Native</li><li>TypeScript</li><li>Android</li><li>Kotlin</li><li>Testing</li></ul>
+        <span class="text-link project-status">En desarrollo</span>
+      </div>
+    </article>
+  `);
+
+  const projectStyles = document.createElement('style');
+  projectStyles.textContent = `
+    #proyectos .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    #proyectos .project-card{min-width:0}
+    .project-status{color:var(--muted);cursor:default}
+    @media (max-width:1000px){#proyectos .project-grid{grid-template-columns:1fr}}
+  `;
+  document.head.appendChild(projectStyles);
+}
+
 // Cursos y capacitaciones profesionales
 const educationSection = document.querySelector('#formacion');
 if (educationSection) {
@@ -184,7 +264,10 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-document.querySelector('[data-cv]').addEventListener('click', () => {
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2200);
-});
+const cvButton = document.querySelector('[data-cv]');
+if (cvButton) {
+  cvButton.textContent = 'Descargar CV técnico';
+  cvButton.addEventListener('click', () => {
+    window.open('assets/CV_Matias_Fernandez_IT_Tecnico_ES.pdf', '_blank', 'noopener');
+  });
+}
