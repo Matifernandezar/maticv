@@ -68,21 +68,12 @@ if (portrait) {
   portrait.src = 'assets/mati.png';
 }
 
-// Amplía la sección de proyectos con trabajos reales recientes.
-const projectsSection = document.querySelector('#proyectos');
-const projectGrid = projectsSection?.querySelector('.project-grid');
-if (projectsSection && projectGrid) {
-  const eyebrow = projectsSection.querySelector('.eyebrow');
-  const heading = projectsSection.querySelector('h2');
-  const intro = projectsSection.querySelector('.section-heading > p:last-child');
-
-  if (eyebrow) eyebrow.textContent = 'PROYECTOS REALES';
-  if (heading) heading.textContent = 'Soluciones publicadas y productos en desarrollo.';
-  if (intro) intro.textContent = 'Sitios, automatizaciones y productos digitales construidos para necesidades concretas, con despliegues públicos cuando corresponde.';
-
+// Agrega solamente los proyectos que no están definidos en index.html.
+const projectGrid = document.querySelector('#proyectos .project-grid');
+if (projectGrid) {
   projectGrid.insertAdjacentHTML('beforeend', `
     <article class="project-card reveal">
-      <div class="project-topline"><span>03</span><span>ALOJAMIENTO · SEO · WEB</span></div>
+      <div class="project-topline"><span>05</span><span>ALOJAMIENTO · SEO · WEB</span></div>
       <h3>Hostel en Córdoba</h3>
       <p class="project-intro">Sitio orientado a captar búsquedas de alojamiento en Córdoba y llevar tráfico directo al canal de contacto.</p>
       <div class="case-grid compact">
@@ -96,23 +87,9 @@ if (projectsSection && projectGrid) {
     </article>
 
     <article class="project-card reveal">
-      <div class="project-topline"><span>04</span><span>NEGOCIO LOCAL · WEB · SEO</span></div>
-      <h3>Nutrir</h3>
-      <p class="project-intro">Sitio comercial para una marca de yogur griego en Salta, pensado para presentar productos y facilitar consultas por WhatsApp.</p>
-      <div class="case-grid compact">
-        <div><span>Implementación</span><p>HTML, CSS y JavaScript, catálogo responsive, SEO local, sitemap, robots.txt y datos estructurados.</p></div>
-        <div><span>Conversión</span><p>Integración directa con WhatsApp y presentación clara de formatos, características y puntos de venta.</p></div>
-      </div>
-      <div class="project-footer">
-        <ul class="tag-list"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>SEO local</li><li>WhatsApp</li></ul>
-        <a class="text-link" href="https://nutrir-three.vercel.app/" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a>
-      </div>
-    </article>
-
-    <article class="project-card reveal">
-      <div class="project-topline"><span>05</span><span>AUTOMATIZACIÓN · WEB APP</span></div>
+      <div class="project-topline"><span>06</span><span>AUTOMATIZACIÓN · WEB APP</span></div>
       <h3>Reels a Drive</h3>
-      <p class="project-intro">Herramienta web para recibir enlaces de Reels y automatizar su descarga, con una arquitectura preparada para integrarse con almacenamiento en Google Drive.</p>
+      <p class="project-intro">Herramienta web para recibir enlaces de Reels y automatizar su descarga, con una arquitectura preparada para integrarse con Google Drive.</p>
       <div class="case-grid compact">
         <div><span>Implementado</span><p>Flujo web de descarga, despliegue en Vercel y pruebas automáticas.</p></div>
         <div><span>En desarrollo</span><p>Integración completa con Google Drive pendiente de credenciales OAuth para el flujo final.</p></div>
@@ -120,20 +97,6 @@ if (projectsSection && projectGrid) {
       <div class="project-footer">
         <ul class="tag-list"><li>Web App</li><li>Automatización</li><li>Vercel</li><li>Testing</li><li>Google Drive</li></ul>
         <span class="text-link project-status">Herramienta interna / en desarrollo</span>
-      </div>
-    </article>
-
-    <article class="project-card reveal">
-      <div class="project-topline"><span>06</span><span>MOBILE · REACT NATIVE · EN DESARROLLO</span></div>
-      <h3>Fuera de Juego</h3>
-      <p class="project-intro">Aplicación móvil de autocontrol frente a apuestas, diseñada para combinar seguimiento personal con herramientas técnicas de bloqueo.</p>
-      <div class="case-grid compact">
-        <div><span>Stack</span><p>React Native + TypeScript, arquitectura multiplataforma y módulos nativos.</p></div>
-        <div><span>Implementado</span><p>Bloqueo Android mediante VPN local/DNS, lógica de dominios y pruebas automatizadas. La publicación móvil continúa en desarrollo.</p></div>
-      </div>
-      <div class="project-footer">
-        <ul class="tag-list"><li>React Native</li><li>TypeScript</li><li>Android</li><li>Kotlin</li><li>Testing</li></ul>
-        <span class="text-link project-status">En desarrollo</span>
       </div>
     </article>
   `);
