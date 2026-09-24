@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/assets/CV_Matias_Fernandez_IT_Tecnico_ES.pdf",
+      "destination": "/cv-tecnico.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
