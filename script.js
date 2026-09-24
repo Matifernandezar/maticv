@@ -268,6 +268,6 @@ const cvButton = document.querySelector('[data-cv]');
 if (cvButton) {
   cvButton.textContent = 'Descargar CV técnico';
   cvButton.addEventListener('click', () => {
-    window.open('assets/CV_Matias_Fernandez_IT_Tecnico_ES.pdf', '_blank', 'noopener');
+    window.open('/cv-tecnico', '_blank', 'noopener');
   });
 }
