@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Descargar CV técnico | Matías Fernández</title>
+  <style>
+    :root{color-scheme:dark;--bg:#050a12;--panel:#0b1727;--line:rgba(155,187,223,.2);--text:#f3f7fb;--muted:#9fb0c3;--accent:#54d8ff}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 75% 10%,rgba(84,216,255,.15),transparent 30%),var(--bg);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text)}
+    main{width:min(560px,100%);padding:32px;border:1px solid var(--line);border-radius:24px;background:var(--panel);text-align:center}h1{margin:0 0 12px;font-size:30px}p{color:var(--muted);line-height:1.6}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;margin-top:12px;border:0;border-radius:14px;background:var(--accent);color:#051019;font-weight:800;cursor:pointer}.btn:disabled{opacity:.6;cursor:wait}.small{font-size:13px;margin-top:18px}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>CV técnico de Matías Fernández</h1>
+    <p id="status">Preparando el PDF para descargar…</p>
+    <button class="btn" id="download" type="button">Descargar CV técnico</button>
+    <p class="small"><a href="/" style="color:var(--accent)">← Volver al portfolio</a></p>
+  </main>
+  <script>
+    const button = document.getElementById('download');
+    const status = document.getElementById('status');
+    const parts = [
+      '/assets/cv-small/part1.txt',
+      '/assets/cv-small/part2.txt',
+      '/assets/cv-small/part3.txt',
+      '/assets/cv-small/part4.txt',
+      '/assets/cv-small/part5a.txt',
+      '/assets/cv-small/part5b.txt',
+      '/assets/cv-small/part6.txt',
+      '/assets/cv-small/part7.txt'
+    ];
+
+    async function downloadCV() {
+      button.disabled = true;
+      status.textContent = 'Preparando el PDF para descargar…';
+      try {
+        const chunks = await Promise.all(parts.map(async (path) => {
+          const response = await fetch(path, {cache: 'force-cache'});
+          if (!response.ok) throw new Error('No se pudo cargar ' + path);
+          return (await response.text()).trim();
+        }));
+        const binary = atob(chunks.join(''));
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        const blob = new Blob([bytes], {type: 'application/pdf'});
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'CV_Matias_Fernandez_IT_Tecnico_ES.pdf';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+        status.textContent = 'Listo. Si la descarga no comenzó, tocá el botón nuevamente.';
+      } catch (error) {
+        console.error(error);
+        status.textContent = 'No se pudo preparar el CV. Intentá nuevamente.';
+      } finally {
+        button.disabled = false;
+      }
+    }
+
+    button.addEventListener('click', downloadCV);
+    setTimeout(downloadCV, 250);
+  </script>
+</body>
+</html>
