@@ -1,0 +1,94 @@
+/* MF Web mobile/layout hardening */
+@media (max-width: 768px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden!important}
+  body{font-size:16px!important}
+  .container{width:calc(100% - 28px)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
+
+  .site-header{position:sticky!important;top:0!important}
+  .nav-wrap{min-height:72px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important}
+  .brand{display:flex!important;align-items:center!important;gap:12px!important;min-width:0!important}
+  .brand-mark{flex:0 0 44px!important;width:44px!important;height:44px!important;border-radius:13px!important;background:#b7ff54!important;color:#111!important;display:grid!important;place-items:center!important;border:0!important}
+  .brand-copy{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:3px!important;line-height:1.05!important;min-width:0!important}
+  .brand-copy strong,.brand-copy small{display:block!important;margin:0!important;white-space:nowrap!important}
+  .brand-copy strong{font-size:1rem!important}
+  .brand-copy small{font-size:.7rem!important;color:#aab3aa!important}
+  .menu-toggle{display:block!important;margin-left:auto!important}
+
+  .hero{padding:48px 0 52px!important}
+  .hero-grid{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:30px!important}
+  .hero-copy{order:1!important;width:100%!important;max-width:none!important}
+  .hero-showcase{order:2!important;width:100%!important;max-width:none!important;margin:0!important;display:flex!important;flex-direction:column!important;gap:10px!important}
+  .pill{font-size:.68rem!important;line-height:1.25!important;white-space:normal!important}
+  .hero-copy h1{font-size:clamp(2.55rem,12vw,3.35rem)!important;line-height:1!important;letter-spacing:-.045em!important;margin:18px 0 20px!important;max-width:none!important}
+  .hero-copy>p{font-size:1rem!important;line-height:1.55!important;margin:0 0 22px!important}
+  .hero-actions{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+  .hero-actions .btn{width:100%!important;min-height:50px!important}
+  .trust-row{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px 12px!important;margin-top:20px!important;font-size:.78rem!important}
+  .trust-row span{white-space:normal!important}
+
+  .browser{width:100%!important;max-width:none!important;border-radius:18px!important;transform:none!important;overflow:hidden!important}
+  .browser-bar{height:42px!important;padding:0 13px!important}
+  .browser-screen{min-height:250px!important;padding:26px 20px!important}
+  .browser-screen h3{font-size:1.9rem!important;line-height:1.05!important;margin:10px 0!important}
+  .browser-screen p{font-size:.9rem!important;line-height:1.45!important;margin-bottom:17px!important}
+  .mini-card{position:static!important;width:100%!important;min-width:0!important;padding:14px 15px!important;display:flex!important;flex-direction:column!important;gap:3px!important}
+  .mini-card strong,.mini-card span{display:block!important;margin:0!important}
+
+  .logos-strip{overflow:hidden!important}
+  .strip-inner{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px 14px!important;justify-items:start!important;padding:14px 0!important;min-height:0!important;font-size:.8rem!important;line-height:1.3!important}
+  .strip-inner b{display:none!important}
+  .strip-inner span{display:block!important;min-width:0!important;white-space:normal!important}
+
+  .section{padding:62px 0!important}
+  .section-head{display:block!important;margin-bottom:24px!important}
+  .section-head>div,.section-head>p{width:100%!important;max-width:none!important}
+  .section-head h2,.process-copy h2,.faq-grid h2,.final-card h2{font-size:clamp(2.15rem,10vw,2.7rem)!important;line-height:1.03!important;margin:8px 0 16px!important}
+  .section-head p{font-size:.94rem!important;line-height:1.55!important;margin:0!important}
+
+  .filters{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;overflow:visible!important;margin:0 0 20px!important;padding:0!important}
+  .filter{width:100%!important;min-width:0!important;padding:10px 8px!important;border-radius:999px!important;background:#151916!important;color:#dce2dc!important;border:1px solid rgba(255,255,255,.12)!important;font-size:.9rem!important;text-align:center!important}
+  .filter.is-active{background:#b7ff54!important;color:#111!important;border-color:#b7ff54!important}
+  .filters .filter:last-child:nth-child(odd){grid-column:1/-1!important}
+
+  .projects-grid{display:grid!important;grid-template-columns:1fr!important;gap:18px!important}
+  .project-card{display:flex!important;flex-direction:column!important;width:100%!important;min-width:0!important;border-radius:20px!important;overflow:hidden!important}
+  .project-visual{display:flex!important;align-items:center!important;justify-content:center!important;min-height:220px!important;padding:16px!important}
+  .mock-browser{display:block!important;width:100%!important;max-width:none!important;transform:none!important;border-radius:14px!important;overflow:hidden!important}
+  .mock-top{display:flex!important;height:30px!important;align-items:center!important;gap:5px!important;padding:0 10px!important}
+  .mock-screen{display:flex!important;flex-direction:column!important;justify-content:flex-end!important;min-height:170px!important;padding:22px 18px!important}
+  .mock-screen span,.mock-screen strong,.mock-screen small{display:block!important}
+  .mock-screen strong{font-size:1.35rem!important;line-height:1.08!important;margin:8px 0 6px!important}
+  .project-body{display:flex!important;flex-direction:column!important;padding:22px!important;min-width:0!important}
+  .project-meta{display:flex!important;flex-direction:column!important;gap:3px!important;font-size:.65rem!important;margin-bottom:6px!important}
+  .project-body h3{font-size:1.75rem!important;line-height:1.08!important;margin:8px 0 12px!important}
+  .project-body p{font-size:.94rem!important;line-height:1.55!important;margin:0 0 16px!important}
+  .project-body ul{display:flex!important;flex-wrap:wrap!important;gap:7px!important;list-style:none!important;margin:0 0 18px!important;padding:0!important}
+  .project-body li{display:inline-flex!important;margin:0!important;font-size:.72rem!important;line-height:1.2!important}
+  .project-body>a{display:inline-flex!important;align-self:flex-start!important}
+  .idea-inner{padding:28px 22px!important}
+
+  .service-grid,.process-grid,.faq-grid{display:grid!important;grid-template-columns:1fr!important;gap:14px!important}
+  .service-card{min-height:0!important;padding:22px!important}
+  .service-card h3{margin:18px 0 7px!important}
+  .process-copy{position:static!important;margin-bottom:18px!important}
+  .steps{display:grid!important;gap:10px!important}
+  .steps article{grid-template-columns:42px minmax(0,1fr)!important;gap:12px!important;padding:17px!important}
+  .steps article>span{width:38px!important;height:38px!important}
+  .niche-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}
+  .niche-grid span{padding:13px 8px!important;font-size:.8rem!important}
+  .faq summary{padding:18px 0!important}
+  .faq p{padding:0 0 18px!important}
+  .final-card{padding:34px 20px!important;border-radius:22px!important}
+  .final-actions{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+  .final-actions .btn{width:100%!important}
+  .footer-inner{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:14px!important}
+}
+
+@media (max-width:390px){
+  .brand-copy small{display:none!important}
+  .trust-row{grid-template-columns:1fr!important}
+  .strip-inner{grid-template-columns:1fr!important}
+  .filters{grid-template-columns:1fr!important}
+  .filters .filter:last-child:nth-child(odd){grid-column:auto!important}
+  .niche-grid{grid-template-columns:1fr!important}
+}

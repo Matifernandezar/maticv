@@ -1,3 +1,8 @@
+const fix = document.createElement('link');
+fix.rel = 'stylesheet';
+fix.href = '/web/layout-fix.css?v=4';
+document.head.appendChild(fix);
+
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
